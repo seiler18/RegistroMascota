@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Personas con SpringBoot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="/img/logojs.png">
+    <!--META TAGS PARA FACEBOOK Y BUSCADORES-->
+    <meta property="og:title" content="Curriculo Jesús Seiler" />
+    <meta property="og:description"
+          content="Curriculo de Jesus Seiler, certificados , experiencias y aplicaciones desarrolladas" />
+    <meta property="og:url" content="https://seiler18.github.io/Curriculo/" />
+    <meta property="og:image" content="https://seiler18.github.io/Curriculo/assets/img/Firma.png" />
+    <!--META TAGS PARA FACEBOOK Y BUSCADORES-->
+    <!--META TAGS GENERALES-->
+    <meta name="author" content="Jesus Enrique Seiler Velasquez">
+    <meta name="description"
+          content="Curriculo de Jesus Seiler, certificados , experiencias y aplicaciones desarrolladas">
+    <meta name="keywords"
+          content="trabajo, Curriculos, Curriculo, trabajos, co-work, Desarrollo full stack java, Spring,CSS,HTML5,React,Bootstrap">
+    <!--META TAGS GENERALES-->
+    <!-- Agrega esta línea para enlazar tu archivo de estilo CSS -->
+    <link href="/css/micss.css" type="text/css" rel="stylesheet">
+    <!--CSS de Bootstrap 4.2.1-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+
+<body onload="getInformacion()">
+
+<div class="container justify-content-center">
+    <div class="form-row">
+        <div class="col-sm">
+
+            <div id="titulo" class="my-2 text-center">
+                <h2>Formulario registro de mascotas</h2>
+                <br />
+            </div>
+
+            <form action="/agregar" method="post" id="formulario">
+
+                <div class="row-group">
+                    <div class="col-md">
+                        <label for="nombreMascota">Nombre mascota</label> <input id="nombreMascota" name="nombreMascota" placeholder="Ingrese nombre" class="form-control" required="required">
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md">
+                        <label for="Tipo">Tipo de mascota</label> <select id="Tipo" name="Tipo" class="form-control" required="required">
+                        <option selected disabled="disabled">Tipo de mascota</option>
+                        <option value="Perro">Perro</option>
+                        <option value="Gato">Gato</option>
+                        <option value="Lobo">Lobo</option>
+                        <option value="Loro">Loro</option>
+                    </select>
+                    </div>
+
+                    <div class="col-md">
+                        <label for="Raza">Raza</label> <select id="Raza" name="Raza" class="form-control" required="required">
+                        <option selected disabled="disabled">Razas</option>
+                        <option value="Pitbull">Pitbull</option>
+                        <option value="Salchicha">Salchicha</option>
+                        <option value="Siberiano">Siberiano</option>
+                        <option value="Bulldog">Bulldog</option>
+                    </select>
+                    </div>
+                </div>
+
+                <br />
+                <div class="row">
+
+                    <div class="col-md">
+                        <label for="Sexo">Sexo</label> <select id="Sexo" name="Sexo" class="form-control" required="required">
+                        <option selected disabled="disabled">Sexos</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                    </select>
+                    </div>
+
+                    <div class="col-md">
+                        <label for="edadMascota">Edad</label> <input type="number" min="0" max="99" id="edadMascota" name="edadMascota" class="form-control" placeholder="Ingrese edad" required="required">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md">
+                        <label for="descripcion">Descripcion</label> <input id="descripcion" name="descripcion" type="text" class="form-control" placeholder="Ingrese descripción" required="required">
+                    </div>
+
+                    <div class="col-md">
+                        <label for="Region">Region</label> <select id="Region" name="Region" class="form-control" required="required">
+                        <option selected disabled="disabled">Lista regiones</option>
+                        <option value="Los Lagos">Los Lagos</option>
+                        <option value="Los Rios">Los Rios</option>
+                    </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md">
+                        <label for="Comuna">Comuna</label> <select id="Comuna" name="Comuna" class="form-control" required="required">
+                        <option selected disabled="disabled">Lista comunas</option>
+                        <option value="Llanquihue">Llanquihue</option>
+                        <option value="Puerto Varas">Puerto Varas</option>
+                    </select>
+                    </div>
+                    <div class="col-md">
+                        <label for="Direccion">Dirección</label> <input id="Direccion" name="Direccion" type="text" class="form-control" placeholder="Ingrese dirección" required="required">
+                    </div>
+
+                </div>
+
+                <br />
+
+                <div class="row-group">
+                    <div class="col-md">
+                        <br /> <label for="rut">RUT del Dueño</label> <input id="rut" name="rut" type="text" class="form-control" placeholder="Ingrese RUT" required="required">
+                    </div>
+
+                    <div class="col-md">
+                        <label for="duenoId">Nombre del Dueño</label><input id="duenoId" name="nombreDueno" type="text" class="form-control" placeholder="Ingrese Nombre" required="required">
+                    </div>
+                    <div class="col-md">
+                        <label for="edadDueno">Edad del dueño</label> <input id="edadDueno" name="edadDueno" type="number" min="0" max="99" class="form-control" placeholder="Ingrese edad" required="required">
+                    </div>
+
+                </div>
+                <br />
+                <div class="container row justify-content-center">
+
+                    <button type="submit" onclick="getRegistro()" id="crearRegistro" class="btn btn-dark">Agregar</button>&nbsp;
+
+                    <button onclick="funcionNoDesarrollada()" class="btn btn-dark">Buscar</button>&nbsp;
+
+                    <button onclick="window.location.href='/listado'" class="btn btn-dark">Mostrar registros</button>&nbsp;
+
+                    <button onclick="window.location.href='https://seiler18.github.io/Curriculo/'" class="btn btn-dark">Volver al curriculo</button>
+
+
+                </div>
+
+            </form>
+            <script type="text/javascript">
+
+            </script>
+
+        </div>
+    </div>
+</div>
+
+<div class="p-4 row justify-content-center align-items-center">
+    <div class="col-sm-4 text-center">
+        <b>Certificado de experiencia :</b> <br>
+        <br>
+        <div class="p-4 row justify-content-center align-items-center" data-iframe-width="150" data-iframe-height="270" data-share-badge-id="5c3ed424-4321-4dfa-b1c5-ec322c126595" data-share-badge-host="https://www.youracclaim.com"></div><script type="text/javascript" async src="//cdn.youracclaim.com/assets/utilities/embed.js"></script>
+
+    </div>
+</div>
+
+
+<section id="contact">
+    <footer class="hero-section bg-dark text-center text-light p-5 " id="footer">
+        <div class="container text-center hero-section text-light ">
+
+            <div class="p-4 text-center">
+                <h1 class="font-weight-bold text-center">Mis redes sociales </h1>
+            </div>
+
+            <p><a href="https://www.facebook.com/IchBinSeiler" target="_blank"><i class="fab fa-facebook fa-"></i>
+                <span>Facebook&nbsp;</span></a>
+                <a href="https://www.twitte.com/Ich_BinSeiler" target="_blank"><i class="fab fa-twitter fa-"></i>
+                    <span>Twitter&nbsp;</span></a></p>
+
+            <p><a href="https://www.instagram.com/ichbinseiler" target="_blank"><i class="fab fa-instagram fa-"></i>
+                <span>Instagram&nbsp;</span></a>
+                <a href="https://gitlab.com/seiler18" target="_blank"><i class="fab fa-gitlab fa-"></i>
+                    <span>Gitlab&nbsp;</span></a></p>
+
+            <a href="https://github.com/seiler18" target="_blank"><i class="fab fa-github fa-"></i>
+                <span>Github&nbsp;</span></a>
+            <a href="https://www.linkedin.com/in/ichbinseiler/" target="_blank"><i class="fab fa-linkedin fa-"></i>
+                <span>LinkedIn&nbsp;</span></a>
+
+        </div>
+        <br />
+        <a href="https://api.whatsapp.com/send?phone=+56953292612" target="_blank"> <span>Contactar via WhatsApp
+          &nbsp;</span><i class="fab fa-whatsapp fa-2x" data-content="WS Jesus Seiler"></i></a>
+        <p><a href="mailto:ichbinseiler@gmail.com" target="_blank"> <span>Contactar por Gmail&nbsp;</span><i
+                class="fab fa-google fa-2x"></i> </a></p>
+
+
+        <div>
+            <p>Jesús Seiler 2023. Todos los derechos reservados. </p>
+        </div>
+
+        <br />
+
+
+    </footer>
+</section>
+<!--SECCION 7 footer -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+<!--Mi script-->
+<script src="/js/miscript.js"></script>
+</body>
+</html>
